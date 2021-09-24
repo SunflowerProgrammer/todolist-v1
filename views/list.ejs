@@ -1,28 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>todolist-v1</title>
-
-    <link rel="stylesheet" href="/css/styles.css">
-</head>
-<body>
-
-    <h1>To Do List - <%= date %></h1>
-
-    <ul>
-        <!-- create a new li for every item in items[] -->
-        <% for (i=0; i<items.length; i++) { %>
-            <li><%= items[i] %></li> 
-        <% }; %>
-
-    </ul>
-
-    <form action="/" method="post">
-        <input type="text" name="item" placeholder="add your to do">
-        <button type="submit">Add</button>
-    </form>
-</body>
-</html>
+<%- include("header"); -%>
+    <div id="heading" class="box">
+        <h1 ><%= listTitle %> - To Do List</h1>  
+    </div>
+    <div class="box">
+        <% for(i=0; i<items.length; i++){%>
+        <div class="item">
+                <input type="checkbox">
+                <p><%= items[i] %></p>
+        </div>
+        <%}%>
+        <form class="item" action=<%=route%> method="POST">
+            <input autocomplete="off" name="newItem" type="text" placeholder="New To Do">
+            <button type="submit" name="list" value=<%=route%>>+</button>
+        </form>
+    </div>
+<%- include("footer"); -%>
