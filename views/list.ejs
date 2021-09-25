@@ -9,7 +9,7 @@
                 <p><%= items[i] %></p>
         </div>
         <%}%>
-        <form class="item" action=<%=route%> method="POST">
+        <form class="item" action="/" method="POST">
             <input autocomplete="off" name="newItem" type="text" placeholder="New To Do">
             <button type="submit" name="list" value=<%=route%>>+</button>
         </form>

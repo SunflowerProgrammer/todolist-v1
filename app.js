@@ -27,12 +27,12 @@ app.post("/", (req,res)=>{
     if(req.body.list === "/work") {
         const newItem = req.body.newItem;
         workItems.push(newItem);
+        res.redirect("/work");
     } else {
         const newItem = req.body.newItem;
         items.push(newItem);
+        res.redirect("/");
     }
-
-    res.redirect("/");
 });
 
 // in case a post request can be sent from route, route must be passed for POST request to be processed accordingly 
